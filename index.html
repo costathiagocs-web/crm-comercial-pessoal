@@ -1,5 +1,5 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CRM Comercial Pessoal 3.2</title><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><style>
-:root{font-family:system-ui,Arial,sans-serif;color:#152d4d;background:#f4f7fb}*{box-sizing:border-box}body{margin:0}header{background:#10376d;color:white;padding:17px max(18px,calc((100vw - 1120px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1{font-size:21px;margin:0}h2{font-size:19px}small,.muted{color:#66778d}header small{color:#b9d2f4}main{max-width:1120px;margin:24px auto;padding:0 15px}.card{background:white;border:1px solid #dde6f1;border-radius:13px;padding:19px;margin-bottom:15px;box-shadow:0 2px 12px #132e5210}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.kpi b{display:block;font-size:24px;color:#10376d;margin-top:8px}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:15px}.tabs button{white-space:nowrap}button{border:0;border-radius:9px;padding:11px 15px;background:#1767c8;color:white;cursor:pointer;font-weight:650}button.secondary{background:#eaf1fa;color:#174579}button.danger{background:#a82940}input,select,textarea{width:100%;border:1px solid #cbd6e5;border-radius:8px;padding:10px;font:inherit;background:white}label{display:block;font-size:13px;font-weight:650;margin:10px 0 5px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 13px}.formactions{display:flex;gap:9px;margin-top:15px;flex-wrap:wrap}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}td,th{text-align:left;padding:11px 9px;border-bottom:1px solid #e7edf5;font-size:14px}th{color:#536982}.pill{background:#e8f0fb;color:#205392;border-radius:50px;padding:5px 9px;font-size:12px}.notice{background:#fff7e8;border:1px solid #f1d8a6;padding:12px;border-radius:9px;margin:12px 0}.good{color:#177346}.bad{color:#a82940}.hidden{display:none!important}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.auth{max-width:440px;margin:55px auto}.stack{display:grid;gap:9px}.item{padding:11px 0;border-bottom:1px solid #e8eef7}.item:last-child{border:0}pre{white-space:pre-wrap;font-family:inherit}#msg{margin:10px 0}a{color:#1464c6}@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.formgrid{grid-template-columns:1fr}header{padding:15px}main{margin:15px auto}.kpi b{font-size:20px}}  .chatlog{max-height:420px;overflow:auto;display:grid;gap:12px;margin:14px 0}.bubble{padding:12px 15px;border-radius:12px;white-space:pre-wrap;line-height:1.55;background:#edf3fb}.bubble.me{background:#dbeaff;margin-left:12%}.chipbar{display:flex;gap:8px;flex-wrap:wrap}.chipbar button{font-size:12px;padding:9px}.priority{border-left:4px solid #1767c8;padding-left:12px;margin:10px 0}.priority.high{border-color:#bd5c21}.assistantnote{font-size:13px;color:#5c708a} </style></head><body><header><div><h1>CRM Comercial Pessoal</h1><small>Versão 3.2 • Supabase • Olist Tiny (lançamento manual)</small></div><div id="who"></div></header><main><div id="msg" role="status"></div><section id="login" class="card auth"><h2>Entrar no CRM</h2><p class="muted">Entre com o usuário criado em Authentication → Users no Supabase.</p><form id="loginForm"><label>E-mail</label><input id="email" type="email" required autocomplete="username"><label>Senha</label><input id="password" type="password" required autocomplete="current-password"><div class="formactions"><button>Entrar</button></div></form><p class="muted">Seu acesso é individual. Não compartilhe sua senha.</p></section><section id="app" class="hidden"><nav class="tabs" id="tabs"><button data-tab="dashboard">Dashboard</button><button data-tab="clientes">Clientes</button><button data-tab="orcamentos">Orçamentos</button><button data-tab="vendas">Vendas</button><button data-tab="acompanhamentos">Acompanhamentos</button><button data-tab="relatorio">Relatório semanal</button><button data-tab="assistente">Assistente inteligente</button></nav><div id="dashboard" class="view"></div><div id="clientes" class="view hidden"></div><div id="orcamentos" class="view hidden"></div><div id="vendas" class="view hidden"></div><div id="acompanhamentos" class="view hidden"></div><div id="relatorio" class="view hidden"></div><div id="assistente" class="view hidden"></div></section></main><script>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CRM Comercial Pessoal 3.3</title><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><style>
+:root{font-family:system-ui,Arial,sans-serif;color:#152d4d;background:#f4f7fb}*{box-sizing:border-box}body{margin:0}header{background:#10376d;color:white;padding:17px max(18px,calc((100vw - 1120px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1{font-size:21px;margin:0}h2{font-size:19px}small,.muted{color:#66778d}header small{color:#b9d2f4}main{max-width:1120px;margin:24px auto;padding:0 15px}.card{background:white;border:1px solid #dde6f1;border-radius:13px;padding:19px;margin-bottom:15px;box-shadow:0 2px 12px #132e5210}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.kpi b{display:block;font-size:24px;color:#10376d;margin-top:8px}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:15px}.tabs button{white-space:nowrap}button{border:0;border-radius:9px;padding:11px 15px;background:#1767c8;color:white;cursor:pointer;font-weight:650}button.secondary{background:#eaf1fa;color:#174579}button.danger{background:#a82940}input,select,textarea{width:100%;border:1px solid #cbd6e5;border-radius:8px;padding:10px;font:inherit;background:white}label{display:block;font-size:13px;font-weight:650;margin:10px 0 5px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 13px}.formactions{display:flex;gap:9px;margin-top:15px;flex-wrap:wrap}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}td,th{text-align:left;padding:11px 9px;border-bottom:1px solid #e7edf5;font-size:14px}th{color:#536982}.pill{background:#e8f0fb;color:#205392;border-radius:50px;padding:5px 9px;font-size:12px}.notice{background:#fff7e8;border:1px solid #f1d8a6;padding:12px;border-radius:9px;margin:12px 0}.good{color:#177346}.bad{color:#a82940}.hidden{display:none!important}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.auth{max-width:440px;margin:55px auto}.stack{display:grid;gap:9px}.item{padding:11px 0;border-bottom:1px solid #e8eef7}.item:last-child{border:0}pre{white-space:pre-wrap;font-family:inherit}#msg{margin:10px 0}a{color:#1464c6}@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.formgrid{grid-template-columns:1fr}header{padding:15px}main{margin:15px auto}.kpi b{font-size:20px}}  .chatlog{max-height:420px;overflow:auto;display:grid;gap:12px;margin:14px 0}.bubble{padding:12px 15px;border-radius:12px;white-space:pre-wrap;line-height:1.55;background:#edf3fb}.bubble.me{background:#dbeaff;margin-left:12%}.chipbar{display:flex;gap:8px;flex-wrap:wrap}.chipbar button{font-size:12px;padding:9px}.priority{border-left:4px solid #1767c8;padding-left:12px;margin:10px 0}.priority.high{border-color:#bd5c21}.assistantnote{font-size:13px;color:#5c708a} </style></head><body><header><div><h1>CRM Comercial Pessoal</h1><small>Versão 3.3 • Supabase • Olist Tiny (lançamento manual)</small></div><div id="who"></div></header><main><div id="msg" role="status"></div><section id="login" class="card auth"><h2>Entrar no CRM</h2><p class="muted">Entre com o usuário criado em Authentication → Users no Supabase.</p><form id="loginForm"><label>E-mail</label><input id="email" type="email" required autocomplete="username"><label>Senha</label><input id="password" type="password" required autocomplete="current-password"><div class="formactions"><button>Entrar</button></div></form><p class="muted">Seu acesso é individual. Não compartilhe sua senha.</p></section><section id="app" class="hidden"><nav class="tabs" id="tabs"><button data-tab="dashboard">Dashboard</button><button data-tab="clientes">Clientes</button><button data-tab="orcamentos">Orçamentos</button><button data-tab="vendas">Vendas</button><button data-tab="acompanhamentos">Acompanhamentos</button><button data-tab="historico">Histórico Comercial</button><button data-tab="relatorio">Relatório semanal</button><button data-tab="assistente">Assistente inteligente</button></nav><div id="dashboard" class="view"></div><div id="clientes" class="view hidden"></div><div id="orcamentos" class="view hidden"></div><div id="vendas" class="view hidden"></div><div id="acompanhamentos" class="view hidden"></div><div id="historico" class="view hidden"></div><div id="relatorio" class="view hidden"></div><div id="assistente" class="view hidden"></div></section></main><script>
 const URL_SUPA='https://eavevtiurfxcjmeoikav.supabase.co', KEY_SUPA='sb_publishable_33Gejvoqk0Of55KAeo8hOA_LDTYw0I-';
 const $=id=>document.getElementById(id), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])), money=n=>Number(n||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}), day=d=>d?new Date(String(d).slice(0,10)+'T12:00:00').toLocaleDateString('pt-BR'):'—', today=()=>new Date().toLocaleDateString('en-CA'), days=d=>d?Math.floor((new Date(today()+'T12:00:00')-new Date(d+'T12:00:00'))/86400000):0;
 let sb, user=null, data={clientes:[],orcamentos:[],vendas:[],acompanhamentos:[]}, tab='dashboard';
@@ -90,4 +90,89 @@ assistantAnswer=function(question){
  }
  return assistantAnswer32(question);
 };
+
+/* Histórico Comercial 3.3 — consultas paginadas no Supabase; não altera tabelas. */
+let history33Request=0,history33Records={orcamentos:[],vendas:[]};
+const history33State={period:'mes',date:today(),month:today().slice(0,7),year:today().slice(0,4),start:today().slice(0,7)+'-01',end:today(),kind:'todos',search:'',status:'todos'};
+function history33Bounds(){
+ const h=history33State;
+ if(h.period==='dia')return [h.date,h.date];
+ if(h.period==='mes'){const [y,m]=h.month.split('-').map(Number);return [h.month+'-01',new Date(y,m,0).toLocaleDateString('en-CA')]}
+ if(h.period==='ano')return [h.year+'-01-01',h.year+'-12-31'];
+ return [h.start,h.end];
+}
+function history33Fields(){
+ const h=history33State;
+ return '<div class="formgrid"><div><label>Período</label><select id="h33period"><option value="dia">Dia</option><option value="mes">Mês</option><option value="ano">Ano</option><option value="personalizado">Personalizado</option></select></div>'+
+ (h.period==='dia'?'<div><label>Data</label><input type="date" id="h33date" value="'+esc(h.date)+'"></div>':
+ h.period==='mes'?'<div><label>Mês</label><input type="month" id="h33month" value="'+esc(h.month)+'"></div>':
+ h.period==='ano'?'<div><label>Ano</label><input type="number" min="2000" max="2100" id="h33year" value="'+esc(h.year)+'"></div>':
+ '<div><label>Data inicial</label><input type="date" id="h33start" value="'+esc(h.start)+'"></div><div><label>Data final</label><input type="date" id="h33end" value="'+esc(h.end)+'"></div>')+
+ '<div><label>Tipo de registro</label><select id="h33kind"><option value="todos">Orçamentos e vendas</option><option value="orcamentos">Somente orçamentos</option><option value="vendas">Somente vendas</option></select></div>'+
+ '<div><label>Cliente ou número</label><input id="h33search" placeholder="Buscar nos resultados" value="'+esc(h.search)+'"></div>'+
+ '<div><label>Situação do orçamento</label><select id="h33status"><option value="todos">Todas</option><option value="pendente">Pendente</option><option value="negociacao">Negociação</option><option value="aprovado">Aprovado</option><option value="perdido">Perdido</option></select></div></div><div class="formactions"><button id="h33apply" type="button">Aplicar filtros</button></div>';
+}
+function history33Wire(){
+ const h=history33State;
+ for(const [id,key] of [['h33period','period'],['h33date','date'],['h33month','month'],['h33year','year'],['h33start','start'],['h33end','end'],['h33kind','kind'],['h33search','search'],['h33status','status']]){
+  const el=$(id);if(!el)continue;
+  if(el.tagName==='SELECT')el.value=h[key];
+  el.onchange=()=>{h[key]=el.value;if(key==='period'){renderHistory33();return}};
+ }
+ $('h33apply').onclick=()=>{for(const [id,key] of [['h33search','search'],['h33kind','kind'],['h33status','status']]){if($(id))h[key]=$(id).value}loadHistory33()};
+}
+function renderHistory33(){
+ const el=$('historico');if(!el)return;
+ el.innerHTML='<div class="card"><h2>Histórico Comercial • 3.3</h2><p class="muted">Consulte orçamentos e vendas pela data registrada. Os indicadores consideram os registros encontrados no período.</p>'+history33Fields()+'</div><div id="h33result" class="card"><p>Selecione um período e clique em Aplicar filtros.</p></div>';
+ history33Wire();
+}
+async function history33All(table,column,start,end){
+ const result=[];const page=500;
+ for(let offset=0;;offset+=page){
+  const {data:rows,error}=await sb.from(table).select('*').gte(column,start).lte(column,end).order(column,{ascending:false}).order('id',{ascending:true}).range(offset,offset+page-1);
+  if(error)throw Error(table+': '+error.message);
+  result.push(...(rows||[]));if(!rows||rows.length<page)break;
+  if(offset>=99500)throw Error('Consulta muito grande; escolha um intervalo menor.');
+ }
+ return result;
+}
+async function loadHistory33(){
+ const token=++history33Request,[start,end]=history33Bounds(),el=$('h33result');
+ if(!start||!end||start>end){el.innerHTML='<p class="bad">Informe um intervalo válido de datas.</p>';return}
+ el.innerHTML='<p>Consultando registros no Supabase...</p>';
+ try{
+  const [quotes,sales]=await Promise.all([history33All('orcamentos','data_orcamento',start,end),history33All('vendas','data_venda',start,end)]);
+  if(token!==history33Request)return;
+  history33Records={orcamentos:quotes,vendas:sales};
+  await history33Display();
+ }catch(e){if(token===history33Request)el.innerHTML='<p class="bad">'+esc(e.message)+'</p>'}
+}
+async function history33Display(){
+ const h=history33State,term=h.search.trim().toLocaleLowerCase('pt-BR'),q=history33Records.orcamentos,v=history33Records.vendas;
+ const ids=[...new Set([...q.map(o=>o.cliente_id),...v.map(x=>q.find(o=>o.id===x.orcamento_id)?.cliente_id).filter(Boolean)])];
+ const names=new Map(data.clientes.map(c=>[c.id,c.empresa]));
+ for(let i=0;i<ids.length;i+=100){
+  const missing=ids.slice(i,i+100).filter(id=>!names.has(id));
+  if(missing.length){const {data:clients,error}=await sb.from('clientes').select('id,empresa').in('id',missing);if(!error)(clients||[]).forEach(c=>names.set(c.id,c.empresa))}
+ }
+ const quoteById=new Map(q.map(o=>[o.id,o]));
+ const clientFor=o=>names.get(o.cliente_id)||'Cliente não identificado';
+ const saleClient=x=>{const o=quoteById.get(x.orcamento_id)||data.orcamentos.find(z=>z.id===x.orcamento_id);return o?clientFor(o):'Sem orçamento vinculado'};
+ const fq=q.filter(o=>(h.status==='todos'||o.status===h.status)&&(!term||[clientFor(o),o.numero_tiny,o.produto,o.status].some(x=>String(x||'').toLocaleLowerCase('pt-BR').includes(term))));
+ const fv=v.filter(x=>!term||[saleClient(x),x.numero_pedido_tiny].some(z=>String(z||'').toLocaleLowerCase('pt-BR').includes(term)));
+ const showQ=h.kind!=='vendas',showV=h.kind!=='orcamentos';
+ const rows=[...(showQ?fq.map(o=>({type:'Orçamento',date:o.data_orcamento,client:clientFor(o),number:o.numero_tiny,status:o.status,value:o.valor})):[]),
+ ...(showV?fv.map(x=>({type:'Venda',date:x.data_venda,client:saleClient(x),number:x.numero_pedido_tiny,status:'—',value:x.valor})):[])].sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+ const sum=arr=>arr.reduce((t,o)=>t+Number(o.valor||0),0);
+ const html='<div class="grid">'+kpi('Orçamentos',showQ?fq.length:'—')+kpi('Valor orçado',showQ?money(sum(fq)):'—')+kpi('Vendas',showV?fv.length:'—')+kpi('Valor vendido',showV?money(sum(fv)):'—')+'</div>'+
+ '<p class="muted">Taxa de conversão não calculada: a data de venda e a data do orçamento podem pertencer a períodos diferentes. Filtros de situação aplicam-se apenas aos orçamentos.</p>'+
+ '<p><b>'+rows.length+'</b> registro(s) encontrado(s).</p>'+
+ '<div class="tablewrap"><table><thead><tr><th>Tipo</th><th>Data</th><th>Cliente</th><th>Número Tiny</th><th>Situação</th><th>Valor</th></tr></thead><tbody>'+
+ (rows.length?rows.map(x=>'<tr><td>'+esc(x.type)+'</td><td>'+day(x.date)+'</td><td>'+esc(x.client)+'</td><td>'+esc(x.number||'—')+'</td><td>'+esc(x.status||'—')+'</td><td>'+money(x.value)+'</td></tr>').join(''):'<tr><td colspan="6">Nenhum registro encontrado.</td></tr>')+
+ '</tbody></table></div>';
+ $('h33result').innerHTML=html;
+}
+const originalShow33=show;
+show=function(t){originalShow33(t);if(t==='historico'&&!$('h33result'))renderHistory33()};
+renderHistory33();
 </script></body></html>
