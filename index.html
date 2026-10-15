@@ -146,7 +146,7 @@ assistantAnswer=function(question){
  return assistantAnswer32(question);
 };
 
-/* Histórico Comercial 3.3 — consultas paginadas no Supabase; não altera tabelas. */
+/* Histórico Comercial 3.4 — consultas paginadas e isoladas por empresa no Supabase. */
 let history33Request=0,history33Records={orcamentos:[],vendas:[]};
 const history33State={period:'mes',date:today(),month:today().slice(0,7),year:today().slice(0,4),start:today().slice(0,7)+'-01',end:today(),kind:'todos',search:'',status:'todos'};
 function history33Bounds(){
@@ -178,7 +178,7 @@ function history33Wire(){
 }
 function renderHistory33(){
  const el=$('historico');if(!el)return;
- el.innerHTML='<div class="card"><h2>Histórico Comercial • 3.4</h2><p class="muted">Consulte orçamentos e vendas pela data registrada. Os indicadores consideram os registros encontrados no período.</p>'+history33Fields()+'</div><div id="h33result" class="card"><p>Selecione um período e clique em Aplicar filtros.</p></div>';
+ el.innerHTML='<div class="card"><h2>Histórico Comercial • 3.4</h2><p class="muted">Consulte orçamentos e vendas pela data registrada. Empresa ativa: <b>'+esc(empresaNome())+'</b>. Os indicadores consideram apenas os registros encontrados no período.</p>'+history33Fields()+'</div><div id="h33result" class="card"><p>Selecione um período e clique em Aplicar filtros.</p></div>';
  history33Wire();
 }
 async function history33All(table,column,start,end,empresaId){
@@ -198,10 +198,10 @@ async function loadHistory33(){
  el.innerHTML='<p>Consultando registros no Supabase...</p>';
  try{
   const [quotes,sales]=await Promise.all([history33All('orcamentos','data_orcamento',start,end,empresaId),history33All('vendas','data_venda',start,end,empresaId)]);
-  if(token!==history33Request)return;
+  if(token!==history33Request||empresaId!==empresaAtual)return;
   history33Records={orcamentos:quotes,vendas:sales};
-  await history33Display();
- }catch(e){if(token===history33Request)el.innerHTML='<p class="bad">'+esc(e.message)+'</p>'}
+  await history33Display(token,empresaId);
+ }catch(e){if(token===history33Request&&empresaId===empresaAtual)el.innerHTML='<p class="bad">'+esc(e.message)+'</p>'}
 }
 async function history33Display(token=history33Request,empresaId=empresaAtual){if(token!==history33Request||empresaId!==empresaAtual)return;
  const h=history33State,term=h.search.trim().toLocaleLowerCase('pt-BR'),q=history33Records.orcamentos,v=history33Records.vendas;
