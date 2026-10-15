@@ -48,7 +48,7 @@ function cabecalhoEmpresa(){
  const nome=esc(user?.user_metadata?.nome||user?.email?.split('@')[0]||'Administrador');
  $('who').innerHTML='<div class="empresa-controles"><label for="empresaSelecionada">Empresa ativa</label><select id="empresaSelecionada" aria-label="Empresa ativa">'+empresas.map(e=>'<option value="'+esc(e.id)+'"'+(e.id===empresaAtual?' selected':'')+'>'+esc(e.nome)+'</option>').join('')+'</select><span>Administrador: '+nome+'</span><button class="secondary" id="logout">Sair</button></div>';
  $('logout').onclick=()=>sb.auth.signOut();
- $('empresaSelecionada').onchange=async ev=>{const id=ev.target.value;if(!empresas.some(e=>e.id===id))return;empresaAtual=id;editingQuoteId=null;history33Records={orcamentos:[],vendas:[]};history33Request++;cabecalhoEmpresa();await refresh()};
+ $('empresaSelecionada').onchange=async ev=>{const id=ev.target.value;if(!empresas.some(e=>e.id===id))return;empresaAtual=id;editingQuoteId=null;history33Records={orcamentos:[],vendas:[]};history33Request++;chatHistory=[];data={clientes:[],orcamentos:[],vendas:[],acompanhamentos:[]};cabecalhoEmpresa();render();renderHistory33();await refresh()};
 }
 async function carregarEmpresas(){
  const {data:lista,error}=await sb.from('empresas').select('id,nome').eq('usuario_id',user.id).order('nome');
