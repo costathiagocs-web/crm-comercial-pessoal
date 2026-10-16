@@ -69,7 +69,6 @@ a{color:#69a8f4}
 @media(max-width:720px){header{padding:14px 13px}header h1{font-size:18px}header h1:before{width:32px;height:32px;font-size:12px}main{padding:0 10px}#tabs{background:#0b2345;border-radius:11px;padding:8px}#tabs button,#tabs button:not(.secondary){white-space:nowrap!important}.card{padding:16px}.empresa-controles select{min-width:150px;max-width:100%}}
 '''
 
-# evita duplicar o bloco se o workflow for reexecutado
 if 'CRM 3.4 • Redesign industrial Eletro Quadros / Stampo' not in s:
     s=s.replace(marker,css+'\n'+marker,1)
 
@@ -80,3 +79,5 @@ for required in ['Redesign industrial Eletro Quadros / Stampo','--eq-orange:#f5a
         raise SystemExit('Validacao falhou: '+required)
 
 p.write_text(s,encoding='utf-8')
+
+# trigger redesign workflow
