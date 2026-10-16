@@ -1,0 +1,29 @@
+name: CRM 3.4 clientes patch
+
+on:
+  push:
+    branches:
+      - desenvolvimento-3.4-melhorias
+    paths:
+      - scripts/crm34_clientes_patch.py
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: desenvolvimento-3.4-melhorias
+          fetch-depth: 0
+      - name: Aplicar melhoria de clientes
+        run: python scripts/crm34_clientes_patch.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "CRM 3.4: melhorar gestao de clientes" || exit 0
+          git push origin HEAD:desenvolvimento-3.4-melhorias
