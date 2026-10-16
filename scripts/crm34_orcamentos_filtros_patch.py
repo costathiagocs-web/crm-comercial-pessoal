@@ -42,3 +42,5 @@ for required in ['quoteFilters','filteredQuotes','quoteSearch','quoteStatus','qu
         raise SystemExit('Validacao falhou: '+required)
 
 p.write_text(s, encoding='utf-8')
+
+# Trigger controlado do workflow temporario.
