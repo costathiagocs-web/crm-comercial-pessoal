@@ -6,3 +6,4 @@ s=s.replace("assets/logo-eletro.svg","https://raw.githubusercontent.com/costathi
 if 'logo-stampo.webp' not in s or 'logo-eletro.webp' not in s:
     raise SystemExit('Não foi possível aplicar os logos')
 p.write_text(s,encoding='utf-8')
+# trigger
