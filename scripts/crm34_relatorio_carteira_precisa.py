@@ -49,3 +49,5 @@ for removed in ['PRIORIDADES DE ACOMPANHAMENTO','Retornos vencidos:','Próximo c
     if removed in new_report:
         raise SystemExit('Campo ainda presente: '+removed)
 p.write_text(s,encoding='utf-8')
+
+# trigger workflow
