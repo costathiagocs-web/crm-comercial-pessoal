@@ -87,3 +87,5 @@ for required in ['function atualizarMarcaEmpresa()','let editingSaleId=null','da
         raise SystemExit('validacao falhou: '+required)
 
 p.write_text(s,encoding='utf-8')
+
+# trigger run
