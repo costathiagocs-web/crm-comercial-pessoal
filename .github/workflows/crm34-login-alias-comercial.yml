@@ -2,9 +2,7 @@ name: CRM 3.4 login alias comercial
 on:
   push:
     branches:
-      - desenvolvimento-3.4-melhorias
-    paths:
-      - scripts/crm34_login_alias_comercial.py
+      - crm34-alias-run
 permissions:
   contents: write
 jobs:
