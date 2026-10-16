@@ -6,3 +6,4 @@ new='<div><label>Data do orçamento *</label><input name="data_orcamento" type="
 if old not in s: raise SystemExit('Rotulo de data nao encontrado')
 s=s.replace(old,new,1)
 p.write_text(s,encoding='utf-8')
+# disparo
