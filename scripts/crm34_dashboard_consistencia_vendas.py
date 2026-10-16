@@ -12,3 +12,5 @@ old3="function statsSummary(){const q=data.orcamentos,v=data.vendas,approved=q.f
 new3="function statsSummary(){const q=data.orcamentos,v=data.vendas,soldQuoteIds=new Set(v.map(x=>x.orcamento_id).filter(Boolean)),approved=q.filter(o=>o.status==='aprovado'||soldQuoteIds.has(o.id)),lost=q.filter(o=>o.status==='perdido'&&!soldQuoteIds.has(o.id)),pending=priorityList(),value=q.reduce((s,o)=>s+Number(o.valor||0),0),sold=v.reduce((s,o)=>s+Number(o.valor||0),0);return {q,v,approved,lost,pending,value,sold,rate:q.length?approved.length/q.length*100:null}}"
 if old3 in s: s=s.replace(old3,new3,1)
 p.write_text(s,encoding='utf-8')
+
+# trigger workflow
