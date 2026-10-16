@@ -119,7 +119,7 @@ let editingClientId=null,clientSearch='';
 let generatedReportText='',reportNeedsGeneration=true;
 let editingSaleId=null;
 function empresaNome(){return empresas.find(e=>e.id===empresaAtual)?.nome||'Selecione uma empresa'}
-function atualizarMarcaEmpresa(){const img=$('brandLogo');if(!img)return;const nome=empresaNome().toLowerCase(),stampo=nome.includes('stampo');img.src=stampo?'assets/logo-stampo.svg':'assets/logo-eletro.svg';img.alt=stampo?'Stampo Metalúrgica':'Eletro Quadros Metalúrgica';img.style.display='block'}
+function atualizarMarcaEmpresa(){const img=$('brandLogo');if(!img)return;const nome=empresaNome().toLowerCase(),stampo=nome.includes('stampo');img.src=stampo?'https://raw.githubusercontent.com/costathiagocs-web/crm-comercial-pessoal/desenvolvimento-3.4-melhorias/assets/logo-stampo.webp':'https://raw.githubusercontent.com/costathiagocs-web/crm-comercial-pessoal/desenvolvimento-3.4-melhorias/assets/logo-eletro.webp';img.alt=stampo?'Stampo Metalúrgica':'Eletro Quadros Metalúrgica';img.style.display='block'}
 function cabecalhoEmpresa(){
  atualizarMarcaEmpresa();
  const nome=esc(user?.user_metadata?.nome||user?.email?.split('@')[0]||'Administrador');
