@@ -51,3 +51,4 @@ if 'CRM 3.4 • Dashboard por mês' not in s:
 for x in ['dashboardMonth','dashboardScope','Mês de referência','Todos os períodos']:
     if x not in s: raise SystemExit('falha: '+x)
 p.write_text(s,encoding='utf-8')
+# trigger
