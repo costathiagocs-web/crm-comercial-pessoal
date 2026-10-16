@@ -20,3 +20,5 @@ for required in ['id="saleQuote"','id="saleValue"','preencherValor','toFixed(2)'
     if required not in s:
         raise SystemExit('Validacao falhou: '+required)
 p.write_text(s,encoding='utf-8')
+
+# disparo controlado
