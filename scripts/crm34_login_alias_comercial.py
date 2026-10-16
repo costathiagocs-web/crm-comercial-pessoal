@@ -13,3 +13,4 @@ new2="const usuario=$('email').value.trim();if(!usuario){message('Informe o usu√
 if old2 not in s: raise SystemExit('recovery handler alvo n√£o encontrado')
 s=s.replace(old2,new2,1)
 p.write_text(s,encoding='utf-8')
+# trigger
