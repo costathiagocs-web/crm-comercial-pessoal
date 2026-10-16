@@ -8,3 +8,4 @@ if '<label for="email">E-mail</label>' not in s:
 if 'Usuário: Comercial' not in s:
     raise SystemExit('nome visual não aplicado')
 p.write_text(s,encoding='utf-8')
+# trigger
