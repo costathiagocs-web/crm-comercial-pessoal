@@ -37,3 +37,4 @@ if old not in s: raise SystemExit('insercao painel vendedor nao encontrada')
 s=s.replace(old,new,1)
 
 p.write_text(s,encoding='utf-8')
+# trigger
