@@ -46,3 +46,5 @@ for required in ['generatedReportText','reportNeedsGeneration','Clique em “Ger
     if required not in s: raise SystemExit('Validacao falhou: '+required)
 
 p.write_text(s,encoding='utf-8')
+
+# disparo controlado do workflow temporario
