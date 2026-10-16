@@ -5,6 +5,7 @@ on:
       - desenvolvimento-3.4-melhorias
     paths:
       - scripts/crm34_melhorias_finais.py
+      - .github/workflows/crm34-melhorias-finais.yml
 permissions:
   contents: write
 jobs:
