@@ -23,7 +23,6 @@ s=s.replace('<tr><td colspan="7" class="muted">Nenhum orçamento encontrado com 
 start=s.find(" const vendedorMap=new Map();")
 end=s.find(" const vendedorPainel=", start)
 if start!=-1 and end!=-1:
-    # remove bloco de preparação + vendedorPainel inteiro até o ;\n seguinte
     panel_end=s.find(";\n", end)
     if panel_end==-1: raise SystemExit('fim painel vendedor nao encontrado')
     s=s[:start]+s[panel_end+2:]
@@ -31,3 +30,4 @@ if start!=-1 and end!=-1:
 s=s.replace("+'</div>'+vendedorPainel+", "+'</div>'+",1)
 
 p.write_text(s,encoding='utf-8')
+# trigger
