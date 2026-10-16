@@ -41,3 +41,5 @@ if 'id="quoteStart"' in s or 'id="quoteEnd"' in s:
     raise SystemExit('Filtros de periodo ainda presentes em Orcamentos')
 
 p.write_text(s,encoding='utf-8')
+
+# disparo controlado
