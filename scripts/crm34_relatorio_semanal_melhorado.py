@@ -46,3 +46,5 @@ for required in ['RESUMO DA SEMANA','CARTEIRA EM ABERTO','PRIORIDADES DE ACOMPAN
     if required not in s:
         raise SystemExit('Validacao falhou: '+required)
 p.write_text(s,encoding='utf-8')
+
+# disparo controlado
