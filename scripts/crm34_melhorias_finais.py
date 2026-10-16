@@ -45,7 +45,7 @@ if 'function saleByQuote(id)' not in s:
     if helper_old not in s: raise SystemExit('helper alvo nao encontrado')
     s=s.replace(helper_old,helper_new,1)
 
-old_status='<td><span class="pill">'+esc(o.status)+'</span></td>'
+old_status="""<td><span class=\"pill\">'+esc(o.status)+'</span></td>"""
 new_status="""<td><span class=\"pill\">'+esc(o.status)+'</span>'+(saleByQuote(o.id)?'<div class=\"sale-badge\">✓ Venda realizada'+(saleByQuote(o.id).numero_pedido_tiny?' • Pedido '+esc(saleByQuote(o.id).numero_pedido_tiny):'')+'</div>':'')+'</td>"""
 if old_status in s:
     s=s.replace(old_status,new_status,1)
@@ -88,4 +88,4 @@ for required in ['function atualizarMarcaEmpresa()','let editingSaleId=null','da
 
 p.write_text(s,encoding='utf-8')
 
-# trigger run 2
+# trigger run 3
