@@ -10,3 +10,4 @@ new2="formHandler('fv',async p=>{\n   if(!Number.isFinite(Number(p.valor))||Numb
 if old2 not in s: raise SystemExit('formHandler venda alvo nao encontrado')
 s=s.replace(old2,new2,1)
 p.write_text(s,encoding='utf-8')
+# trigger
