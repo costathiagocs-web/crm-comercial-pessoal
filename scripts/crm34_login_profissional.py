@@ -13,3 +13,4 @@ newjs="$('loginForm').onsubmit=async e=>{e.preventDefault();const btn=$('loginBu
 if oldjs not in s: raise SystemExit('handler de login não encontrado')
 s=s.replace(oldjs,newjs,1)
 p.write_text(s,encoding='utf-8')
+# trigger
