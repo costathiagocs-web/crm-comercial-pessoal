@@ -10,3 +10,4 @@ s=s.replace("+'</div>'+ vendedorPainel+", "+'</div>'+", 1)
 if 'Vendas por vendedor' in s:
     raise SystemExit('painel Vendas por vendedor ainda presente')
 p.write_text(s,encoding='utf-8')
+# trigger
