@@ -15,3 +15,4 @@ if s.find('src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/su
 if s.rfind('/* CRM 3.4 • Dashboard por mês */') < s.find('<script>'):
     raise SystemExit('bloco não foi movido para o script principal')
 p.write_text(s,encoding='utf-8')
+# trigger
